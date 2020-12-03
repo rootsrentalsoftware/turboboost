@@ -8,6 +8,7 @@ module Turboboost
         options[:html] ||= {}
         options[:html]['data-turboboost'] = true
         options[:remote] = true
+        options[:authenticity_token] = true
       end
       super(record_or_name_or_array, *(args << options), &proc)
     end
@@ -18,6 +19,7 @@ module Turboboost
         options[:data] ||= {}
         options[:data]['turboboost'] = true
         options[:remote] = true
+        options[:authenticity_token] = true
       end
       super(url_for_options, *(args << options), &proc)
     end
